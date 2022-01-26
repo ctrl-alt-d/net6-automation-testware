@@ -13,8 +13,8 @@ namespace TestWare.Samples.Selenium.Web.StepDefinitions;
 [Binding]
 public sealed class LoginSteps
 {
-    private readonly ILoginPage loginPage;
-    private readonly ICookiePage cookiePage;
+    private readonly ILoginPage loginPage = default!;
+    private readonly ICookiePage cookiePage = default!;
 
     public LoginSteps()
     {
