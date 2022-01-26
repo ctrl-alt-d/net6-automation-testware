@@ -36,7 +36,7 @@ public static class RetryPolicies
     public static void ExecuteActionWithTimeout(Action action, int timeoutInMinutes, Action actionIfException)
         => ExecuteActionWithTimeout(action, timeoutInMinutes, actionIfException, null);
 
-    public static void ExecuteActionWithTimeout(Action action, int timeoutInMinutes, Action actionIfException, Action actionIfCatch)
+    public static void ExecuteActionWithTimeout(Action action, int timeoutInMinutes, Action? actionIfException, Action? actionIfCatch)
     {
         var succeeded = false;
         var lastException = new Exception();

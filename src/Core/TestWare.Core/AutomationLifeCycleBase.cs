@@ -9,10 +9,10 @@ namespace TestWare.Core;
 
 public abstract class AutomationLifeCycleBase : IAutomationLifeCycle
 {
-    public AutomationSummary Summary;
+    public AutomationSummary Summary = default!;
 
-    public IEnumerable<IEngineManager> Engines { get; private set; }
-    public TestConfiguration TestConfiguration;
+    public IEnumerable<IEngineManager> Engines { get; private set; } = default!;
+    public TestConfiguration TestConfiguration = default!;
 
 
     protected abstract IEnumerable<Assembly> GetTestWareComponentAssemblies();

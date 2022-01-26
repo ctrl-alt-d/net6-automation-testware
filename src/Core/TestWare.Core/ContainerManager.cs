@@ -7,7 +7,7 @@ namespace TestWare.Core
 {
     public static class ContainerManager
     {
-        public static IContainer Container { get; private set; }
+        public static IContainer Container { get; private set; } = default!; // initialized on build container
         private static ContainerBuilder _builder = new ContainerBuilder();
         private static List<Assembly> _assemblies= new();
         private static ConcurrentDictionary<Type,object> _instances = new();

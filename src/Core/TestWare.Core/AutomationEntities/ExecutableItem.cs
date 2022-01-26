@@ -38,7 +38,7 @@ namespace TestWare.Core.AutomationEntities
 
         public ExecutableItem GetCurrentItem()
         {
-            ExecutableItem executableItem;
+            ExecutableItem? executableItem;
             if (_currentKey == null)
             {
                 executableItem = AddItem(_defaultKey);
@@ -47,7 +47,7 @@ namespace TestWare.Core.AutomationEntities
             {
                 _ = _subItems.TryGetValue(_currentKey, out executableItem);
             }
-            return executableItem;
+            return executableItem ?? throw new Exception("Unable to get current item");;
         }
     }
 }
