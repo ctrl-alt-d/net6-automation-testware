@@ -31,7 +31,7 @@ namespace TestWare.Samples.WinAppDriver.Desktop
         protected override TestConfiguration GetConfiguration()
         {
             var configManager = new ConfigurationManager();
-            return configManager.ReadConfigurationFile("TestConfiguration.Desktop.json");
+            return configManager.ReadConfigurationFile("TestConfiguration.Desktop.json") ?? throw new Exception("Unable to read test configuration");
         }
     }
 }
